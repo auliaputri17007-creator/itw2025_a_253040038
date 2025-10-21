@@ -1,0 +1,31 @@
+
+        body {
+            background-color: rgb(0, 255, 255);
+            font-family: georgia,serif;
+        }
+        h1 {
+            font-family: "comic sans MS", cursive;
+            font-size: 60px;
+            color: darkblue;
+        }
+        h3 {
+            color: rgb(8, 8, 8);
+            text-align: left;
+        }
+        h3 span {
+            color: darkcyan;
+            font-weight: bold;
+        }
+        .nama {
+            color: white;
+            font-weight: bold;
+        }
+        h4 {
+            text-align: right;
+            font-style: italic;
+        }
+        p1 {
+            color: orange;
+            text-align: justify;
+        }
+    

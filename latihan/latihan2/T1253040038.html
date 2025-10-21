@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Curriculum Vitae</title>
+<style>
+  :root{
+    --bg:#b7f8e9;    
+    --accent:#e863c7;
+    --panel:#b1cfe1; 
+    --text:#2b230f;
+    --muted:#173b3d;
+    --container-width:760px;
+  }
+  body{
+    font-family: "Georgia", "Times New Roman", serif;
+    background:#f2f2f2;
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+    padding:24px;
+  }
+  .cv{
+    width:var(--container-width);
+    background:var(--bg);
+    border:6px solid var(--accent);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    padding:0;
+  }
+
+  .title{
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+    padding:10px 8px;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform:uppercase;
+  }
+
+  .main{
+    display:grid;
+    grid-template-columns: 1fr 200px;
+    gap:14px;
+    padding:14px;
+  }
+
+  .info-box{
+    background:var(--panel);
+    border:3px solid rgba(0,0,0,0.18);
+    padding:10px;
+  }
+
+  .fields{
+    display:grid;
+    grid-template-columns: 140px 12px 1fr;
+    gap:8px 6px;
+    align-items:center;
+  }
+  .label{
+    font-weight:700;
+    padding:8px 6px;
+    border-right: none;
+  }
+  .colon{
+    text-align:center;
+    color:var(--muted);
+  }
+  .value{
+    background: #fffbe6;
+    border:2px solid rgba(0,0,0,0.12);
+    padding:8px 10px;
+    min-height:36px;
+  }
+
+  .photo-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .photo{
+    width:170px;
+    height:170px;
+    background:#fff;
+    border:4px solid rgba(0,0,0,0.12);
+    display:block;
+    object-fit:cover;
+  }
+
+  /* Pendidikan header */
+  .section-title{
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+    padding:8px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin:12px 14px 0 14px;
+    border:3px solid rgba(0,0,0,0.06);
+  }
+
+  .pendidikan{
+    margin:10px 14px 0 14px;
+    background:var(--panel);
+    border:3px solid rgba(0,0,0,0.1);
+    padding:12px;
+    min-height:80px;
+  }
+  .pendidikan ul{
+    margin:0;
+    padding-left:20px;
+  }
+
+  .hobby-title{
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+    padding:6px;
+    font-weight:700;
+    margin:12px 14px 0 14px;
+    text-transform:capitalize;
+  }
+  .hobby-row{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:10px;
+    padding:12px 14px 18px 14px;
+    background:var(--panel);
+    border:3px solid rgba(0,0,0,0.08);
+  }
+  .hobby-item{
+    background:#fffbe6;
+    border:2px solid rgba(0,0,0,0.08);
+    padding:8px;
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hobby-item img{ max-width:100%; max-height:100%; object-fit:contain; }
+
+  .note{
+    margin:12px 14px 14px 14px;
+    background:var(--accent);
+    color:#fff;
+    padding:10px;
+    text-align:center;
+    font-weight:700;
+    border:3px solid rgba(0,0,0,0.06);
+  }
+
+  /* responsive */
+  @media (max-width:700px){
+    .main{ grid-template-columns: 1fr; }
+    .photo{ width:140px; height:140px; }
+    .hobby-row{ grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+  <div class="cv" role="main">
+    <div class="title">Curriculum Vitae</div>
+
+    <div class="main">
+      <!-- left info -->
+      <div class="info-box">
+        <div class="fields" aria-label="informasi pribadi">
+          <div class="label">Nama</div><div class="colon">:</div><div class="value">Aulia putri syalsyabilah</div>
+          <div class="label">Jenis Kelamin</div><div class="colon">:</div><div class="value">Perempuan</div>
+          <div class="label">Agama</div><div class="colon">:</div><div class="value">Islam</div>
+          <div class="label">Alamat</div><div class="colon">:</div><div class="value">Bandung</div>
+          <div class="label">Email</div><div class="colon">:</div><div class="value">auliaputri17007@gmail.com</div>
+          <div class="label">Tempat Tgl Lahir</div><div class="colon">:</div><div class="value">Maba,17Agustus 2007</div>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <img class="photo" src="foto salsa.jpg" alt="Foto profil">
+      </div>
+    </div>
+
+    <div class="section-title">Pendidikan Formal</div>
+    <div class="pendidikan">
+      <ul>
+        <li>SD inpres Maba</li>
+        <li>SMPN 3 Maba</li>
+        <li>SMA N 5 Maba</li>
+        <li>Universitas Pasundan Bandung</li>
+      </ul>
+    </div>
+
+    <div class="hobby-title">Hobby</div>
+    <div class="hobby-row">
+      <div class="hobby-item"><img src="foto musik.jpg" width="150" height="100" alt="dengar musik"> dengar musik</div>
+      <div class="hobby-item"><img src="foto nonton.jpg" width="150" height="100" alt="nonton film"> nonton film</div>
+      <div class="hobby-item"><img src="foto makan.jpg" width="150" height="100" alt="makan"> makan</div>
+      <div class="hobby-item"><img src="foto jalan.jpg" width="150" height="100" alt="jalan-jalan"> jalan-jalan</div>
+    </div>   
+  </div>
+</body>
+</html>
