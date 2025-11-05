@@ -48,14 +48,12 @@ h1 {
   font-size: 2rem;
   margin-bottom: 25px;
   background: linear-gradient(to right, var(--pink), var(--blue));
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: fadeIn 1s ease;
 
 }
 .judul {
   background: black;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: black;
 }
 
