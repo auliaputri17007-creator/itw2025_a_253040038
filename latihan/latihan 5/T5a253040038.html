@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>website- animasi lightbox</title>
+<link rel="stylesheet" href="T5a253040038.css">
+
+</head>
+<body>
+
+
+  <h1 class="judul">🌸 Galeri Pink & Biru Laut 🌊</h1>
+
+  <div class="gallery">
+    <div class="thumb"><img src="laut.jpg" alt="Pantai Indah"></div>
+    <div class="thumb"><img src="pegunungan.jpg" alt="Pegunungan Biru"></div>
+    <div class="thumb"><img src="malam hri.jpg" alt="Kota Malam"></div>
+    <div class="thumb"><img src="jembtan.jpg" alt="Jembatan Senja"></div>
+  </div>
+
+  
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="close-btn" id="closeBtn">✕</button>
+      <button class="prev-btn" id="prevBtn">⟨</button>
+      <img id="lightboxImg" src="" alt="">
+      <button class="next-btn" id="nextBtn">⟩</button>
+      <div class="caption" id="caption"></div>
+    </div>
+  </div>
+
+  <footer>💗 Keindahan sejati bukan hanya ada pada gambar, tapi juga pada hati yang melihatnya💗</footer>
+
+<script>
+const thumbs = document.querySelectorAll('.thumb img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const caption = document.getElementById('caption');
+const closeBtn = document.getElementById('closeBtn');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  lightbox.classList.add('active');
+  showImage(index);
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+}
+
+function showImage(index) {
+  const img = thumbs[index];
+  lightboxImg.src = img.src;
+  caption.textContent = img.alt;
+}
+
+thumbs.forEach((img, index) => {
+  img.addEventListener('click', () => openLightbox(index));
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % thumbs.length;
+  showImage(currentIndex);
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+  showImage(currentIndex);
+});
+
+closeBtn.addEventListener('click', closeLightbox);
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') nextBtn.click();
+  if (e.key === 'ArrowLeft') prevBtn.click();
+});
+
+</script>
+
+
+</body>
+</html>
