@@ -1,0 +1,266 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: sans-serif;
+    font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  overflow-x: hidden;
+  
+}
+
+nav {
+    display: flex;
+    background-color: rgb(37, 26, 44);  
+    justify-content: space-around;  
+    padding: 20px 0;
+    color: rgb(226, 204, 237);      
+    
+}
+
+nav .logo {
+  font-family: "Pacifico";
+  font-weight: 400;
+  font-style: normal;;
+  letter-spacing: 3px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    color: rgb(226, 204, 237);
+    text-decoration: none;
+    font-size: 0,8em;
+
+}
+
+nav ul li a:hover {
+    color: rgb(166, 123, 188);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column ;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(166, 123, 188); 
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+ 
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+ 
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+    background-color: white;
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+     transform: rotate(-45deg) translate(-1px, 0);
+     background-color: white;
+}
+ 
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+     transform: scale(0)
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    gap: 50px;
+    flex-wrap: wrap;
+    background: linear-gradient(to right, #ffe3f8, #d8f8ff);
+}
+
+.hero-text {
+    max-width: 450px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+.btn {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, pink, #00c9ff);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+
+.hero-img img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid pink;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.about {
+    text-align: center;
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.about h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+
+.services {
+    text-align: center;
+    padding: 60px 10%;
+    background: #f9f9f9;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    width: 250px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.gallery {
+    text-align: center;
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.contact {
+    text-align: center;
+    padding: 60px 10%;
+    background: #f5faff;
+}
+
+.contact-box {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background-color: rgb(37, 26, 44);
+  color: rgb(226, 204, 237);
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 760px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 70%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgb(37, 26, 44);
+        z-index: -1; 
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+        ;
+    }
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
